@@ -1,12 +1,5 @@
 module WeatherApi
     class GetWeatherApi
-        # attr_reader :urlc, :urlh
-
-        # def url_set(urlc, urlh)
-        #     @urlc = urlc 
-        #     @urlh = urlh
-        # end
-
         def self.get_weather_current(urlc)
             get_weather_from_api(urlc)
         end
