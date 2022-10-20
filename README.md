@@ -20,3 +20,7 @@
  
 - Отдельно разработал простенький фронтенд для отображения погоды
 - Можно расширить функционал добавив отображения графика/диаграммы погоды за последние 24 часа
+
+<img src="https://github.com/soroktree/HotWireShort/blob/main/app/assets/images/f1.png" alt="screenshots" style="max-width: 100%;">
+  
+<img src="https://github.com/soroktree/HotWireShort/blob/main/app/assets/images/f2.png" alt="screenshots" style="max-width: 100%;">
