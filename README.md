@@ -1,24 +1,22 @@
-# README
+Приложение реализует функционал API для статистики по погоде: 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+/weather/current - Текущая температура
+/weather/historical - Почасовая температура за последние 24 часа
+/weather/historical/max - Максимальная темперетура за 24 часа
+/weather/historical/min - Минимальная темперетура за 24 часа
+/weather/historical/avg - Средняя темперетура за 24 часа
+/weather/by_time - Найти температуру ближайшую к переданному timestamp
 
-Things you may want to cover:
+-Данные о погоде хранятся локально.
+-Используется кэширование.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Используются следующие библиотеки:
+  - rufus scheduler 
+  - sidekiq 
+  - Rspec
+  - VCR 
+  - Rails.cache
+ 
+ 
+- Отдельно разработал простенький фронтенд для отображения погоды
+- Можно расширить функционал добавив отображения графика/диаграммы погоды за последние 24 часа
