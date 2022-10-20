@@ -9,7 +9,7 @@ RSpec.describe "Weathers", type: :request do
       allow(Rails.cache).to receive(:read).with('api_error').and_return(nil)
       allow(Rails.cache).to receive(:read).with('max').and_return(17)
       get "/weather/historical/max"
-      json = JSON.parse(response.body)
+      json = JSON.parse(response.body)  
       expect(response.status).to eq(200)
     end
 

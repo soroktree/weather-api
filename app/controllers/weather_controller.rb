@@ -4,24 +4,14 @@ class WeatherController < ApplicationController
   def current
     @current = Rails.cache.read('current')  
     ct = Time.at(@current[:ObserveTime]).to_datetime
-    unless ( (Time.now - 30.minutes)..Time.now ).include?(ct)
-        load_weather(URLC, 'current')
-        @current = Rails.cache.read('current')
-    end
     render json: @current.to_json, status: 200
   end
 
   def historical
     @historical = Rails.cache.read('historical')
-    historicalMax = Time.at(@historical.first[:ObserveTime]).to_datetime
-    unless ( (Time.now - 80.minutes)..Time.now ).include?(historicalMax)
-        load_weather(URLH, 'historical')
-        @historical = Rails.cache.read('historical')
-    end
     unless @historical.count == 24
         render json: {'Error': 'There is no data for the specified period'}, status: 404
     end
-    @historical.push(@historical.count)
     render json: @historical.to_json, status: 200
   end
 

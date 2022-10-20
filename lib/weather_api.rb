@@ -11,9 +11,9 @@ module WeatherApi
         private 
 
         def self.get_weather_from_api(url)
-            @uri = URI.parse(url)
-            @response = Net::HTTP.get(@uri) 
-            weatherson = JSON.parse(@response)
+            uri = URI.parse(url)
+            response = Net::HTTP.get(uri) 
+            weatherson = JSON.parse(response)
         end    
     end
 end
